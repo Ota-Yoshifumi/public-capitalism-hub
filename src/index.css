@@ -25,7 +25,7 @@
 
     /* ゴールドアクセント - 公益資本主義の価値を表現 */
     --secondary: 45 85% 50%;
-    --secondary-foreground: 220 20% 10%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 220 15% 95%;
     --muted-foreground: 220 10% 40%;
