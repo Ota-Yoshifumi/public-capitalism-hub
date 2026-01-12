@@ -7,13 +7,13 @@ import heroImage from "@/assets/hero-sky.jpg";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Ken Burns effect */}
+      {/* Background Image with horizontal pan effect */}
       <motion.div 
-        className="absolute inset-0"
-        initial={{ scale: 1 }}
-        animate={{ scale: 1.15 }}
+        className="absolute inset-0 w-[150%] h-full"
+        initial={{ x: "0%" }}
+        animate={{ x: "-33.33%" }}
         transition={{
-          duration: 8,
+          duration: 12,
           repeat: Infinity,
           repeatType: "reverse",
           ease: "easeInOut",
