@@ -13,7 +13,7 @@ export function Footer() {
                 公益資本主義・研究実装センター
               </h3>
             </div>
-            <p className="text-white/60 text-sm leading-relaxed max-w-md">
+            <p className="text-white/60 text-sm leading-loose tracking-wide max-w-md">
               福澤諭吉が説いた「学問ノススメ」の精神を受け継ぎ、
               公益資本主義による持続可能な社会の実現を目指す
               産官学連携の学びプラットフォームです。

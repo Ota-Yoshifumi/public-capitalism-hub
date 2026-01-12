@@ -80,7 +80,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-white/70 mb-8 max-w-2xl mx-auto font-light leading-relaxed"
+            className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto font-light leading-loose tracking-wide"
           >
             教育を受けた健康で豊かな中間層を創り出し、
             <br className="hidden md:block" />

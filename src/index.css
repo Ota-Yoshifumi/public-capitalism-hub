@@ -121,6 +121,17 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "palt";
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+  }
+
+  p {
+    line-height: 2;
   }
 
   /* 日本語タイポグラフィの最適化 */
