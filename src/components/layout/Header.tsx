@@ -79,7 +79,7 @@ export function Header() {
             <Button
               asChild
               size="sm"
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
+              className="bg-secondary text-white hover:bg-secondary/90"
             >
               <Link to="/contact">お申し込み</Link>
             </Button>
@@ -126,7 +126,7 @@ export function Header() {
               ))}
               <Button
                 asChild
-                className="mt-2 bg-secondary text-secondary-foreground hover:bg-secondary/90"
+                className="mt-2 bg-secondary text-white hover:bg-secondary/90"
               >
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                   お申し込み

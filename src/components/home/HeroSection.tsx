@@ -133,7 +133,7 @@ export function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-10 py-6 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-secondary text-white hover:bg-secondary/90 px-10 py-6 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <Link to="/programs">プログラムを見る</Link>
             </Button>
