@@ -28,13 +28,13 @@ export function CTASection() {
             EXECUTIVE PROGRAM 2026
           </span>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8 tracking-tight">
             次世代リーダーのための
             <br />
             <span className="text-gradient-gold">公益資本主義プログラム</span>
           </h2>
           
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-10 leading-loose tracking-wide">
             企業経営者、官公庁・自治体のリーダーを対象とした
             <br className="hidden md:block" />
             実践的なエグゼクティブ・プログラムを開講します。

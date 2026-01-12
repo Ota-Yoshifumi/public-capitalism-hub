@@ -40,18 +40,18 @@ export function NewsSection() {
           />
         </AnimatedSection>
 
-        <div className="mt-12 space-y-6 max-w-4xl mx-auto">
+        <div className="mt-14 space-y-8 max-w-4xl mx-auto">
           {newsItems.map((item, index) => (
             <AnimatedSection
               key={index}
               delay={200 + index * 100}
               animation="fade-in-left"
             >
-              <article className="group relative p-6 rounded-xl bg-dark-muted/50 border border-white/10 hover:border-secondary/30 transition-all duration-300">
-                <div className="flex flex-col md:flex-row gap-4 md:items-start">
-                  <div className="flex items-center gap-3 md:w-40 shrink-0">
+              <article className="group relative p-8 rounded-xl bg-dark-muted/50 border border-white/10 hover:border-secondary/30 transition-all duration-300">
+                <div className="flex flex-col md:flex-row gap-6 md:items-start">
+                  <div className="flex items-center gap-3 md:w-44 shrink-0">
                     <CalendarDays className="w-4 h-4 text-white/40" />
-                    <span className="text-sm text-white/60">{item.date}</span>
+                    <span className="text-sm text-white/60 tracking-wide">{item.date}</span>
                     {item.isNew && (
                       <span className="px-2 py-0.5 text-xs font-medium bg-secondary text-secondary-foreground rounded-full">
                         NEW
@@ -59,13 +59,13 @@ export function NewsSection() {
                     )}
                   </div>
                   <div className="flex-1">
-                    <span className="text-xs font-medium text-secondary tracking-wider uppercase">
+                    <span className="text-xs font-medium text-secondary tracking-widest uppercase">
                       {item.category}
                     </span>
-                    <h3 className="text-lg font-semibold text-white mt-1 mb-2 group-hover:text-secondary transition-colors">
+                    <h3 className="text-lg font-semibold text-white mt-2 mb-3 group-hover:text-secondary transition-colors tracking-wide">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-white/60 leading-relaxed">
+                    <p className="text-sm text-white/60 leading-loose tracking-wide">
                       {item.description}
                     </p>
                   </div>
