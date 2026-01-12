@@ -11,9 +11,9 @@ export function HeroSection() {
       <motion.div 
         className="absolute inset-0"
         initial={{ scale: 1 }}
-        animate={{ scale: 1.1 }}
+        animate={{ scale: 1.15 }}
         transition={{
-          duration: 20,
+          duration: 8,
           repeat: Infinity,
           repeatType: "reverse",
           ease: "easeInOut",
