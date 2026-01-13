@@ -140,8 +140,7 @@ export function HeroSection() {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-white/40 text-white hover:bg-white/15 backdrop-blur-sm px-10 py-6 text-base transition-all duration-300 hover:-translate-y-1"
+              className="bg-white/20 text-white border border-white/40 hover:bg-white/30 backdrop-blur-sm px-10 py-6 text-base transition-all duration-300 hover:-translate-y-1"
             >
               <Link to="/about">センター紹介</Link>
             </Button>
