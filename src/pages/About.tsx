@@ -3,12 +3,14 @@ import { AnimatedSection } from "@/components/ui/animated-section";
 import { SectionTitle } from "@/components/ui/section-title";
 import { motion } from "framer-motion";
 import { Target, Heart, Lightbulb, TrendingUp } from "lucide-react";
+import inokumaPhoto from "@/assets/instructors/inokuma-hiroko.jpg";
+import haraPhoto from "@/assets/instructors/hara-george.jpg";
 
 const timelineItems = [
-  { year: "2026年1月", event: "センター設立" },
-  { year: "2026年5月", event: "第1期エグゼクティブ・プログラム開講" },
-  { year: "2026年秋", event: "研究成果報告シンポジウム（予定）" },
-  { year: "2027年", event: "第2期プログラム・研究拡大（予定）" },
+  { year: "2025年11月", event: "設立発足式" },
+  { year: "2026年3月", event: "特別公開講座" },
+  { year: "2026年5月", event: "エグゼクティブ・プログラム開講" },
+  { year: "2026年7月", event: "プロジェクト開始" },
 ];
 
 const values = [
@@ -53,8 +55,9 @@ export default function About() {
               センター紹介
             </h1>
             <p className="text-lg text-white/70 leading-relaxed">
-              公益資本主義・研究実装センターは、持続可能な経済社会の実現に向けた
-              研究と実践を推進する産官学連携のプラットフォームです。
+              教育を受けた健康で豊かな中間層を創り出し、
+              <br />
+              世界が憧れる日本を目指す
             </p>
           </motion.div>
         </div>
@@ -75,17 +78,21 @@ export default function About() {
             <AnimatedSection delay={200} animation="fade-in-left">
               <div className="bg-card rounded-2xl border border-border p-8 h-full">
                 <div className="flex flex-col items-center text-center mb-6">
-                  <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <span className="text-3xl font-serif text-primary">猪</span>
+                  <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
+                    <img 
+                      src={inokumaPhoto} 
+                      alt="猪熊浩子" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">猪熊 浩子</h3>
                   <p className="text-sm text-muted-foreground mt-1">センター長</p>
-                  <p className="text-sm text-muted-foreground">慶應義塾大学法務研究科 教授</p>
+                  <p className="text-sm text-muted-foreground">慶應義塾大学SDM研究科 教授</p>
                 </div>
-                <blockquote className="text-muted-foreground leading-relaxed italic text-center">
-                  「公益資本主義は、福澤諭吉が説いた『学問ノススメ』の精神を現代に活かす試みです。
-                  法学の視点から、公益を重視した企業統治のあり方を研究し、
-                  持続可能な社会の実現に貢献したいと考えています。」
+                <blockquote className="text-muted-foreground leading-relaxed text-sm">
+                  「私は、2008年に開設された大学院システムデザイン・マネジメント（SDM）研究科において、大規模・複雑化した社会課題をシステムとして俯瞰的に捉え、アカデミアの知見を用いて解決策を講じ、社会実装することに取り組んでまいりました。
+                  <br /><br />
+                  本センターは、福澤諭吉先生が明治の時代に教育・報道・親睦の枠組みとして築かれた『慶應義塾』『時事新報』『交詢社』の三本柱を現代版として再構築することを目指します。」
                 </blockquote>
               </div>
             </AnimatedSection>
@@ -94,17 +101,21 @@ export default function About() {
             <AnimatedSection delay={300} animation="fade-in-right">
               <div className="bg-card rounded-2xl border border-border p-8 h-full">
                 <div className="flex flex-col items-center text-center mb-6">
-                  <div className="w-24 h-24 rounded-full bg-secondary/20 flex items-center justify-center mb-4">
-                    <span className="text-3xl font-serif text-secondary">原</span>
+                  <div className="w-24 h-24 rounded-full overflow-hidden mb-4">
+                    <img 
+                      src={haraPhoto} 
+                      alt="原丈人" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-foreground">原 丈人</h3>
                   <p className="text-sm text-muted-foreground mt-1">センター統括</p>
-                  <p className="text-sm text-muted-foreground">デフタパートナーズグループ 会長</p>
+                  <p className="text-sm text-muted-foreground">アライアンス・フォーラム財団 会長</p>
                 </div>
-                <blockquote className="text-muted-foreground leading-relaxed italic text-center">
-                  「株主資本主義から公益資本主義へ。この転換こそが、
-                  格差と分断を是正し、世界が憧れる日本を創り出す鍵です。
-                  理論と実践の両面から、新しい経済システムの構築を目指します。」
+                <blockquote className="text-muted-foreground leading-relaxed text-sm">
+                  「現在、格差の拡大や社会の分断は、世界の至る所で進み、止まることがありません。この根本原因は金融経済が重視され、株主資本主義が跋扈する経済・社会システムにあります。
+                  <br /><br />
+                  福澤諭吉が、近代日本に向けて提唱したのは『学問ノススメ』です。ここ、慶應義塾大学において、これからの日本に必要な『公益資本主義ノススメ』を産み出していきましょう。」
                 </blockquote>
               </div>
             </AnimatedSection>
@@ -164,20 +175,16 @@ export default function About() {
           <AnimatedSection delay={200} className="mt-12 max-w-3xl mx-auto">
             <div className="prose prose-lg prose-invert mx-auto">
               <p className="text-white/70 leading-relaxed">
-                1980年代以降、株主価値の最大化を至上命題とする株主資本主義が世界経済を席巻しました。
-                しかしその結果、短期的な利益追求が優先され、
-                <span className="text-white font-medium">格差の拡大、環境破壊、地域社会の疲弊</span>
-                といった深刻な問題が生じています。
+                現在、格差の拡大や社会の分断は、世界の至る所で進み、止まることがありません。このままでは、どの国からも中間層が減り、一部の富裕層とその他多くの貧困層となり、社会は、国は、そして世界は持続的でないものになってしまいます。
               </p>
               <p className="text-white/70 leading-relaxed mt-6">
-                公益資本主義は、これらの問題を解決するための新しい経済システムです。
-                企業は株主だけでなく、従業員、顧客、取引先、地域社会、そして将来世代を含む
-                すべてのステークホルダーのために存在するという考え方に基づき、
-                <span className="text-white font-medium">中長期的な価値創造</span>を目指します。
+                この根本原因は金融経済が重視され、株主資本主義が跋扈する経済・社会システムにあります。こうした経済・社会システムのあり方の変革は容易ではありませんが、
+                <span className="text-white font-medium">世界に先駆け超高齢化社会に突入するわが国・日本こそが最先端の変革の舞台</span>
+                となりえます。
               </p>
               <p className="text-white/70 leading-relaxed mt-6">
-                当センターは、この公益資本主義の理念を理論的に深化させるとともに、
-                実際の企業経営や政策立案に活かせる実践知を創出する場として設立されました。
+                「豊かな中間層が復活し、誰もが健康で溌らつと暮らせる経済と社会を実現していく」そんな日本に変われたら、世界から注目の的、憧れの対象となるでしょう。
+                そのためには、志ある有能な者たちが、組織の垣根を越えて集い、大いに議論し、創意工夫を練り、相互に研究し、社会に実装し、その実践を支援していく場が必要です。
               </p>
             </div>
           </AnimatedSection>
