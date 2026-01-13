@@ -4,57 +4,65 @@ import { SectionTitle } from "@/components/ui/section-title";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Calendar, Users, MapPin, CircleDollarSign, GraduationCap, ArrowRight } from "lucide-react";
+import { Calendar, Users, MapPin, CircleDollarSign, GraduationCap, ArrowRight, Clock } from "lucide-react";
 
 const programDetails = [
   { icon: Calendar, label: "開講期間", value: "2026年5月〜10月" },
-  { icon: Users, label: "定員", value: "30名程度" },
-  { icon: MapPin, label: "会場", value: "慶應義塾大学 三田キャンパス" },
-  { icon: CircleDollarSign, label: "受講料", value: "30万円（税込）" },
+  { icon: Clock, label: "時間", value: "月1回 18:00〜20:00" },
+  { icon: MapPin, label: "会場", value: "三田キャンパス＋オンライン" },
+  { icon: CircleDollarSign, label: "受講料", value: "30万円（税別）" },
 ];
+
+const specialLecture = {
+  date: "3月30日(月) 18:00",
+  title: "企業ガバナンスの課題",
+  speaker: "後藤 元 氏",
+  affiliation: "東京大学大学院 法学政治学研究科 教授",
+  isFree: true,
+};
 
 const curriculum = [
   {
     session: 1,
-    month: "5月",
-    title: "公益資本主義とは何か",
-    description: "株主資本主義の問題点と公益資本主義の基本理念を学ぶ",
-    speakers: ["原 丈人", "猪熊 浩子"],
+    date: "5月18日(月)",
+    title: "資本主義と貨幣の本質",
+    speaker: "岩井 克人 氏",
+    affiliation: "東京大学名誉教授",
   },
   {
     session: 2,
-    month: "6月",
-    title: "企業統治と法制度",
-    description: "公益資本主義を支える企業統治のあり方と法制度の研究",
-    speakers: ["猪熊 浩子", "後藤 元"],
+    date: "6月15日(月)",
+    title: "100年企業の経営速度",
+    speaker: "小原 泰 氏",
+    affiliation: "シン・ニホン 代表取締役",
   },
   {
     session: 3,
-    month: "7月",
-    title: "経済理論と資本主義の再構築",
-    description: "経済学の観点から資本主義の本質と改革の方向性を探る",
-    speakers: ["岩井 克人"],
+    date: "7月21日(月)",
+    title: "ベンチャー経営者の本物度",
+    speaker: "矢作 恒雄 氏",
+    affiliation: "慶應義塾大学名誉教授・大学院経営管理研究科教授",
   },
   {
     session: 4,
-    month: "8月",
-    title: "中長期経営と価値創造",
-    description: "短期主義を超えた中長期的な企業経営のあり方を実践的に学ぶ",
-    speakers: ["原 丈人", "ゲスト講師"],
+    date: "8月17日(月)",
+    title: "人口減と地方自治経営",
+    speaker: "講師調整中",
+    affiliation: "",
   },
   {
     session: 5,
-    month: "9月",
-    title: "ステークホルダー経営の実践",
-    description: "従業員、地域社会、環境を含むステークホルダーとの共生経営",
-    speakers: ["小原 泰", "ゲスト講師"],
+    date: "9月21日(月)",
+    title: "公共経営と民間経営",
+    speaker: "講師調整中",
+    affiliation: "",
   },
   {
     session: 6,
-    month: "10月",
-    title: "総括・グループ発表",
-    description: "学びの総括と受講生によるグループプロジェクト発表",
-    speakers: ["全講師陣"],
+    date: "10月19日(月)",
+    title: "付加価値を創り出せ",
+    speaker: "講師調整中",
+    affiliation: "",
   },
 ];
 
@@ -62,14 +70,14 @@ const instructors = [
   {
     name: "原 丈人",
     role: "センター統括",
-    affiliation: "デフタパートナーズグループ 会長",
+    affiliation: "アライアンス・フォーラム財団 会長",
     specialty: "公益資本主義論、ベンチャー投資",
   },
   {
     name: "猪熊 浩子",
     role: "センター長",
-    affiliation: "慶應義塾大学法務研究科 教授",
-    specialty: "会社法、企業統治論",
+    affiliation: "慶應義塾大学SDM研究科 教授",
+    specialty: "システムデザイン、社会実装",
   },
   {
     name: "後藤 元",
@@ -80,14 +88,20 @@ const instructors = [
   {
     name: "岩井 克人",
     role: "講師",
-    affiliation: "東京大学名誉教授、国際基督教大学特別招聘教授",
+    affiliation: "東京大学名誉教授",
     specialty: "経済理論、会社論",
   },
   {
     name: "小原 泰",
     role: "講師",
-    affiliation: "フューチャー株式会社 取締役CFO",
-    specialty: "経営実務、財務戦略",
+    affiliation: "シン・ニホン 代表取締役",
+    specialty: "経営実務、100年企業経営",
+  },
+  {
+    name: "矢作 恒雄",
+    role: "講師",
+    affiliation: "慶應義塾大学名誉教授・大学院経営管理研究科教授",
+    specialty: "経営管理、ベンチャー経営",
   },
 ];
 
@@ -112,9 +126,9 @@ export default function Programs() {
               <span className="text-gradient-gold">エグゼクティブ・プログラム 2026</span>
             </h1>
             <p className="text-lg text-white/70 leading-relaxed">
-              次世代の経営リーダーを対象とした
+              人口減を逆手に捉え
               <br />
-              公益資本主義の理論と実践を学ぶ6ヶ月間のプログラム
+              社会を豊かにする公益資本主義人材へ
             </p>
           </motion.div>
         </div>
@@ -128,6 +142,14 @@ export default function Programs() {
               subtitle="Overview"
               title="プログラム概要"
             />
+          </AnimatedSection>
+
+          <AnimatedSection delay={100} className="mt-8 max-w-3xl mx-auto text-center">
+            <p className="text-muted-foreground leading-relaxed">
+              現代の企業経営は、投資家との対話、人的資本経営の導入、地政学リスクへの備えなど、
+              かつてない複雑な課題に直面しています。こうした課題を「公益資本主義」の観点から捉え直すことで、
+              俯瞰的な視座を磨きます。企業価値の持続的向上と社会的責任の両立を目指す実践的な学びの場です。
+            </p>
           </AnimatedSection>
 
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -155,17 +177,49 @@ export default function Programs() {
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-secondary">•</span>
-                  企業の経営者・経営幹部、次世代経営層
+                  企業経営・マネジメント層（企業規模は不問）
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-secondary">•</span>
-                  官公庁・自治体のリーダー、政策立案者
+                  官公庁政策立案者等
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-secondary">•</span>
-                  公益資本主義に関心を持つプロフェッショナル
+                  自治体職員・関係者
                 </li>
               </ul>
+              <p className="text-sm text-muted-foreground/70 mt-4">
+                ＊官公庁の方のご参加は事務局までお問合せください
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Special Opening Lecture */}
+      <section className="py-16 bg-secondary/10">
+        <div className="container mx-auto px-4">
+          <AnimatedSection>
+            <div className="max-w-3xl mx-auto">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="px-3 py-1 text-xs font-bold bg-secondary text-secondary-foreground rounded-full">
+                  無料
+                </span>
+                <h2 className="text-2xl font-bold text-foreground">開講特別講演</h2>
+              </div>
+              <div className="p-8 bg-background rounded-2xl border border-border">
+                <div className="flex flex-col md:flex-row md:items-center gap-6">
+                  <div className="md:w-40 shrink-0">
+                    <p className="text-sm text-muted-foreground">日時</p>
+                    <p className="text-lg font-semibold text-foreground">{specialLecture.date}</p>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-foreground mb-2">{specialLecture.title}</h3>
+                    <p className="text-foreground font-medium">{specialLecture.speaker}</p>
+                    <p className="text-sm text-muted-foreground">{specialLecture.affiliation}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </AnimatedSection>
         </div>
@@ -177,7 +231,7 @@ export default function Programs() {
           <AnimatedSection>
             <SectionTitle
               subtitle="Curriculum"
-              title="カリキュラム"
+              title="カリキュラム（全6回）"
               dark
             />
           </AnimatedSection>
@@ -191,34 +245,49 @@ export default function Programs() {
               >
                 <div className="group relative p-6 rounded-xl bg-dark-muted/50 border border-white/10 hover:border-secondary/30 transition-all duration-300">
                   <div className="flex flex-col md:flex-row gap-4 md:items-center">
-                    <div className="flex items-center gap-4 md:w-32 shrink-0">
+                    <div className="flex items-center gap-4 md:w-40 shrink-0">
                       <span className="text-3xl font-bold text-gradient-gold">
                         {String(item.session).padStart(2, "0")}
                       </span>
-                      <span className="text-sm text-white/60">{item.month}</span>
+                      <span className="text-sm text-white/60">{item.date}</span>
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold text-white mb-2">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-white/60 mb-3">
-                        {item.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {item.speakers.map((speaker) => (
-                          <span
-                            key={speaker}
-                            className="px-3 py-1 text-xs font-medium bg-white/5 text-white/70 rounded-full"
-                          >
-                            {speaker}
+                      {item.speaker && (
+                        <div className="flex flex-wrap gap-2">
+                          <span className="px-3 py-1 text-xs font-medium bg-white/5 text-white/70 rounded-full">
+                            {item.speaker}
                           </span>
-                        ))}
-                      </div>
+                          {item.affiliation && (
+                            <span className="text-xs text-white/50">
+                              {item.affiliation}
+                            </span>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
               </AnimatedSection>
             ))}
+
+            {/* 修了課題発表会 */}
+            <AnimatedSection delay={800} animation="fade-in-left">
+              <div className="group relative p-6 rounded-xl bg-secondary/20 border border-secondary/30">
+                <div className="flex flex-col md:flex-row gap-4 md:items-center">
+                  <div className="flex items-center gap-4 md:w-40 shrink-0">
+                    <span className="text-sm text-white/60">10月26日(月)</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-white">
+                      修了課題発表会
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -282,16 +351,21 @@ export default function Programs() {
                 <br />
                 詳細のお問い合わせ・お申し込みは下記よりお願いいたします。
               </p>
-              <Button
-                asChild
-                size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8"
-              >
-                <Link to="/contact">
-                  お申し込み・お問い合わせ
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-8"
+                >
+                  <Link to="/contact">
+                    お申し込み・お問い合わせ
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Link>
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground mt-6">
+                お問い合わせ: pic-center@keio.jp
+              </p>
             </div>
           </AnimatedSection>
         </div>

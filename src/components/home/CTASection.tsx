@@ -67,7 +67,7 @@ export function CTASection() {
               { label: "開講期間", value: "2026年5月〜10月" },
               { label: "全6回", value: "月1回開催" },
               { label: "定員", value: "30名程度" },
-              { label: "受講料", value: "30万円（税込）" },
+              { label: "受講料", value: "30万円（税別）" },
             ].map((item, index) => (
               <motion.div
                 key={item.label}

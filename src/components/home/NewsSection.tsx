@@ -6,6 +6,13 @@ import { Link } from "react-router-dom";
 
 const newsItems = [
   {
+    date: "2026年3月30日",
+    category: "イベント",
+    title: "開講特別講演（無料）開催",
+    description: "エグゼクティブ・プログラム開講に先立ち、後藤元氏（東京大学大学院教授）による「企業ガバナンスの課題」をテーマとした特別講演を開催します。",
+    isNew: true,
+  },
+  {
     date: "2026年1月",
     category: "お知らせ",
     title: "公益資本主義エグゼクティブ・プログラム 2026 受講生募集開始",
@@ -13,17 +20,10 @@ const newsItems = [
     isNew: true,
   },
   {
-    date: "2026年1月",
-    category: "設立",
-    title: "KGRI 公益資本主義・研究実装センター 設立",
-    description: "慶應義塾大学グローバルリサーチインスティテュート（KGRI）内に、公益資本主義・研究実装センターを設立しました。",
-    isNew: true,
-  },
-  {
-    date: "近日公開",
-    category: "イベント",
-    title: "設立記念シンポジウム（仮）",
-    description: "センター設立を記念したシンポジウムを開催予定です。詳細は追って発表いたします。",
+    date: "2025年11月28日",
+    category: "開催報告",
+    title: "設立発足式を開催しました",
+    description: "慶應義塾大学三田キャンパス西校舎ホールにて、設立発足式を開催。会場・オンラインあわせて約400名にご参加いただきました。",
     isNew: false,
   },
 ];
